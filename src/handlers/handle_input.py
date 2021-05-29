@@ -1,13 +1,23 @@
 import sys
 
-from utils.consoleoutput import oColors
-from utils.utilities import getHelp, getCommandHelp
-from handlers.handle_config import configurationValues
-from plugin.plugin_downloader import searchPackage, getSpecificPackage
-from plugin.plugin_updatechecker import updateInstalledPackage, checkInstalledPackage
-from plugin.plugin_remover import removePlugin
-from serverjar.serverjar_checker import checkInstalledServerjar, updateServerjar
-from serverjar.serverjar_paper import papermc_downloader
+if __package__ == 'pluGET.handlers':
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.utils.utilities import getHelp, getCommandHelp
+    from pluGET.handlers.handle_config import configurationValues
+    from pluGET.plugin.plugin_downloader import searchPackage, getSpecificPackage
+    from pluGET.plugin.plugin_updatechecker import updateInstalledPackage, checkInstalledPackage
+    from pluGET.plugin.plugin_remover import removePlugin
+    from pluGET.serverjar.serverjar_checker import checkInstalledServerjar, updateServerjar
+    from pluGET.serverjar.serverjar_paper import papermc_downloader
+else:
+    from utils.consoleoutput import oColors
+    from utils.utilities import getHelp, getCommandHelp
+    from handlers.handle_config import configurationValues
+    from plugin.plugin_downloader import searchPackage, getSpecificPackage
+    from plugin.plugin_updatechecker import updateInstalledPackage, checkInstalledPackage
+    from plugin.plugin_remover import removePlugin
+    from serverjar.serverjar_checker import checkInstalledServerjar, updateServerjar
+    from serverjar.serverjar_paper import papermc_downloader
 
 
 def createInputLists():

@@ -3,12 +3,20 @@ import urllib.request
 from urllib.error import HTTPError
 from pathlib import Path
 
-from utils.consoleoutput import oColors
-from utils.web_request import doAPIRequest
-from utils.utilities import createTempPluginFolder, deleteTempPluginFolder, calculateFileSizeKb, calculateFileSizeMb
-from handlers.handle_config import configurationValues
-from handlers.handle_sftp import sftp_upload_file, createSFTPConnection
-from handlers.handle_ftp import ftp_upload_file, createFTPConnection
+if __package__ == 'pluGET.plugin':
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.utils.web_request import doAPIRequest
+    from pluGET.utils.utilities import createTempPluginFolder, deleteTempPluginFolder, calculateFileSizeKb, calculateFileSizeMb
+    from pluGET.handlers.handle_config import configurationValues
+    from pluGET.handlers.handle_sftp import sftp_upload_file, createSFTPConnection
+    from pluGET.handlers.handle_ftp import ftp_upload_file, createFTPConnection
+else:
+    from utils.consoleoutput import oColors
+    from utils.web_request import doAPIRequest
+    from utils.utilities import createTempPluginFolder, deleteTempPluginFolder, calculateFileSizeKb, calculateFileSizeMb
+    from handlers.handle_config import configurationValues
+    from handlers.handle_sftp import sftp_upload_file, createSFTPConnection
+    from handlers.handle_ftp import ftp_upload_file, createFTPConnection
 
 
 def handleRegexPackageName(packageNameFull):

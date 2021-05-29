@@ -1,4 +1,3 @@
 @ECHO OFF
 cd "%~dp0"
-cd src
-py "__init__.py"
+py "src/__init__.py"

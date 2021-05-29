@@ -5,11 +5,16 @@ import shutil
 import requests
 from pathlib import Path
 
-from utils.consoleoutput import oColors
-from handlers.handle_config import configurationValues
-from handlers.handle_sftp import createSFTPConnection
-from handlers.handle_ftp import createFTPConnection
-
+if __package__ == 'pluGET.utils':
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.handlers.handle_config import configurationValues
+    from pluGET.handlers.handle_sftp import createSFTPConnection
+    from pluGET.handlers.handle_ftp import createFTPConnection
+else:
+    from utils.consoleoutput import oColors
+    from handlers.handle_config import configurationValues
+    from handlers.handle_sftp import createSFTPConnection
+    from handlers.handle_ftp import createFTPConnection
 
 def getHelp():
     print(oColors.brightYellow+ "Need help?" + oColors.standardWhite)

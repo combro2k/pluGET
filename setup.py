@@ -5,7 +5,13 @@ from distutils.core import setup
 setup(
     name='pluGET',
     version='0.1dev',
-    packages=['pluGET',],
+    packages=[
+        'pluGET',
+        'pluGET.handlers',
+        'pluGET.plugin',
+        'pluGET.serverjar',
+        'pluGET.utils',
+    ],
     package_dir={'pluGET': 'src'},
     license='Creative Commons Attribution-Noncommercial-Share Alike license',
     long_description=open('README.md').read(),

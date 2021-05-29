@@ -5,12 +5,20 @@ import urllib.request
 from pathlib import Path
 from rich.console import Console
 
-from utils.consoleoutput import oColors
-from utils.web_request import doAPIRequest
-from handlers.handle_sftp import createSFTPConnection, sftp_upload_server_jar
-from handlers.handle_ftp import createFTPConnection, ftp_upload_server_jar
-from handlers.handle_config import configurationValues
-from utils.utilities import createTempPluginFolder, deleteTempPluginFolder, calculateFileSizeMb
+if __package__ == 'pluGET.serverjar':
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.utils.web_request import doAPIRequest
+    from pluGET.handlers.handle_sftp import createSFTPConnection, sftp_upload_server_jar
+    from pluGET.handlers.handle_ftp import createFTPConnection, ftp_upload_server_jar
+    from pluGET.handlers.handle_config import configurationValues
+    from pluGET.utils.utilities import createTempPluginFolder, deleteTempPluginFolder, calculateFileSizeMb
+else:
+    from utils.consoleoutput import oColors
+    from utils.web_request import doAPIRequest
+    from handlers.handle_sftp import createSFTPConnection, sftp_upload_server_jar
+    from handlers.handle_ftp import createFTPConnection, ftp_upload_server_jar
+    from handlers.handle_config import configurationValues
+    from utils.utilities import createTempPluginFolder, deleteTempPluginFolder, calculateFileSizeMb
 
 
 # = 1.16.5

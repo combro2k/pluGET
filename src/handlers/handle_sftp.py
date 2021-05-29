@@ -3,8 +3,12 @@ import os
 import pysftp
 import paramiko
 
-from utils.consoleoutput import oColors
-from handlers.handle_config import configurationValues
+if __package__ == 'pluGET.handlers':
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.handlers.handle_config import configurationValues
+else:
+    from utils.consoleoutput import oColors
+    from handlers.handle_config import configurationValues
 
 
 def createSFTPConnection():

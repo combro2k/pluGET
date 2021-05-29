@@ -2,11 +2,18 @@ import os
 import re
 from pathlib import Path
 
-from utils.consoleoutput import oColors
-from handlers.handle_config import configurationValues
-from handlers.handle_sftp import createSFTPConnection, sftp_listAll
-from handlers.handle_ftp import createFTPConnection, ftp_listAll
-from plugin.plugin_updatechecker import getFileName, getFileVersion, getInstalledPlugin, createPluginList
+if __package__ == 'pluGET.plugin':
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.handlers.handle_config import configurationValues
+    from pluGET.handlers.handle_sftp import createSFTPConnection, sftp_listAll
+    from pluGET.handlers.handle_ftp import createFTPConnection, ftp_listAll
+    from pluGET.plugin.plugin_updatechecker import getFileName, getFileVersion, getInstalledPlugin, createPluginList
+else:
+    from utils.consoleoutput import oColors
+    from handlers.handle_config import configurationValues
+    from handlers.handle_sftp import createSFTPConnection, sftp_listAll
+    from handlers.handle_ftp import createFTPConnection, ftp_listAll
+    from plugin.plugin_updatechecker import getFileName, getFileVersion, getInstalledPlugin, createPluginList
 
 
 def removePlugin(pluginToRemove):

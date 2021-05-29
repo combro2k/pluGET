@@ -3,7 +3,10 @@ import sys
 import configparser
 from pathlib import Path
 
-from utils.consoleoutput import oColors
+if __package__ == 'pluGET.handlers':
+    from pluGET.utils.consoleoutput import oColors
+else:
+    from utils.consoleoutput import oColors
 
 
 class configurationValues:

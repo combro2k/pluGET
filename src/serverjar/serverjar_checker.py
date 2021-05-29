@@ -3,11 +3,18 @@ import sys
 from urllib.error import HTTPError
 from pathlib import Path
 
-from handlers.handle_sftp import createSFTPConnection, sftp_listFilesInServerRoot
-from handlers.handle_ftp import createFTPConnection, ftp_listFilesInServerRoot
-from handlers.handle_config import configurationValues
-from utils.consoleoutput import oColors
-from serverjar.serverjar_paper import paperCheckForUpdate, papermc_downloader
+if __package__ == 'pluGET.serverjar':
+    from pluGET.handlers.handle_sftp import createSFTPConnection, sftp_listFilesInServerRoot
+    from pluGET.handlers.handle_ftp import createFTPConnection, ftp_listFilesInServerRoot
+    from pluGET.handlers.handle_config import configurationValues
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.serverjar.serverjar_paper import paperCheckForUpdate, papermc_downloader
+else:
+    from handlers.handle_sftp import createSFTPConnection, sftp_listFilesInServerRoot
+    from handlers.handle_ftp import createFTPConnection, ftp_listFilesInServerRoot
+    from handlers.handle_config import configurationValues
+    from utils.consoleoutput import oColors
+    from serverjar.serverjar_paper import paperCheckForUpdate, papermc_downloader
 
 
 def checkInstalledServerjar():

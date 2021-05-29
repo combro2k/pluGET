@@ -133,3 +133,6 @@ dmypy.json
 
 # PyCharm Settings
 .idea
+
+# config
+/config.ini

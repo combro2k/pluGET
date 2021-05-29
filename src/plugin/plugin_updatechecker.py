@@ -6,13 +6,22 @@ from urllib.error import HTTPError
 from pathlib import Path
 from rich.progress import track
 
-from utils.consoleoutput import oColors
-from utils.web_request import doAPIRequest
-from handlers.handle_config import configurationValues
-from handlers.handle_sftp import createSFTPConnection, sftp_listAll, sftp_downloadFile
-from handlers.handle_ftp import createFTPConnection, ftp_listAll, ftp_downloadFile
-from plugin.plugin_downloader import getSpecificPackage
-from utils.utilities import createTempPluginFolder, deleteTempPluginFolder
+if __package__ == 'pluGET.plugin':
+    from pluGET.utils.consoleoutput import oColors
+    from pluGET.utils.web_request import doAPIRequest
+    from pluGET.handlers.handle_config import configurationValues
+    from pluGET.handlers.handle_sftp import createSFTPConnection, sftp_listAll, sftp_downloadFile
+    from pluGET.handlers.handle_ftp import createFTPConnection, ftp_listAll, ftp_downloadFile
+    from pluGET.plugin.plugin_downloader import getSpecificPackage
+    from pluGET.utils.utilities import createTempPluginFolder, deleteTempPluginFolder
+else:
+    from utils.consoleoutput import oColors
+    from utils.web_request import doAPIRequest
+    from handlers.handle_config import configurationValues
+    from handlers.handle_sftp import createSFTPConnection, sftp_listAll, sftp_downloadFile
+    from handlers.handle_ftp import createFTPConnection, ftp_listAll, ftp_downloadFile
+    from plugin.plugin_downloader import getSpecificPackage
+    from utils.utilities import createTempPluginFolder, deleteTempPluginFolder
 
 
 def createPluginList():
